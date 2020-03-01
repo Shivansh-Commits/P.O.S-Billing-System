@@ -21,42 +21,49 @@ b) INVENTORY
 	2.Remove Product
 	3.Delete Product
 	4.Modify Product Details
-  5.Open Inventory
-
+        5.Open Inventory
 c) PURCHASE
 	1.Generate Bill
 	2.Sales Logs
 	3.Customer Information
-
 d) TAX 
 	1.Tax Details
 	2.Update Tax Details
-
 e) ABOUT
+
+
 
 2).Functionalities Given to the Cashier:
 
 a) USER
-  	1.LOG OUT
-  		
+  	1.LOG OUT	
 b) INVENTORY
 	  1.Add Product 
 	  2.Remove Product
 	  3.Delete Product
 	  4.Modify Product Details
-   	5.Open Inventory
-
+   	  5.Open Inventory
 c) PURCHASE
 	  1.Generate Bill
 	  2.Customer Information
-
 d) ABOUT
 
-Developed By Shivansh Singh Bhadouria.
-B-Tech CS(Hons)
 
+Developed By: Shivansh Singh Bhadouria.
+B-Tech Computer Science (Hons AI & DS)
 
 *********************************    N  O  T  E     ******************************************** 
 To run this project you must have Latest Version of Java installed on your System(jdk 13.0.2) and 
 Oracles SQL 10G Version and a Compiler / Editor like Eclipse (Preffered). As this software creates 
 its own database and Stores it in your local System it is necessary to install a database Software. 
+If you are running it for the first time then first thing you need to do is intall all these softw-
+-ares and open Oracle SQL 10G , create a user with username ="system" and password of your choice
+(which you have to change manually in the function 'login' present in class 'insertdataindb' ,
+replace [YOUR_PASSWORD] with the password you set for the user "system" in the line ='Connection 
+connection = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","[YOUR_PASSWORD]"); ').
+Then after logging in click on SQL > SQL Command  type the following Queries and run the program:
+
+1.CREATE TABLE admins (username VARCHAR2(50 CHAR),password VARCHAR2(50 CHAR)) 
+  INSERT INTO TABLE admins values('admin','admin')
+2.CREATE TABLE cashier (username VARCHAR2(50 CHAR),password VARCHAR2(50 CHAR))
+  INSERT INTO TABLE cashier values('cashier',cashier)
