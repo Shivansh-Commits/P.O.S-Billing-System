@@ -1,0 +1,62 @@
+This is a GUI Based Super Market Management / Billing System Software Developed in JAVA and Using Swing Plug in.
+It has been Developed in the Eclipse IDE (2019-2020).
+
+FUNCTIONALITIES OFFERED IN THE SOFTWARE:
+
+There are Two Types of Users who can acces this Software
+  1.Administrator
+  2.Cashier
+
+1).Functionalities Provided to Administrator:
+
+a) USER
+  	1.Add Cashier Account
+  	2.Remove Cashier Account
+ 	  3.View Cashier Details
+	  4.View User Logs
+  	5.Log Out
+
+b) INVENTORY
+	1.Add Product 
+	2.Remove Product
+	3.Delete Product
+	4.Modify Product Details
+  5.Open Inventory
+
+c) PURCHASE
+	1.Generate Bill
+	2.Sales Logs
+	3.Customer Information
+
+d) TAX 
+	1.Tax Details
+	2.Update Tax Details
+
+e) ABOUT
+
+2).Functionalities Given to the Cashier:
+
+a) USER
+  	1.LOG OUT
+  		
+b) INVENTORY
+	  1.Add Product 
+	  2.Remove Product
+	  3.Delete Product
+	  4.Modify Product Details
+   	5.Open Inventory
+
+c) PURCHASE
+	  1.Generate Bill
+	  2.Customer Information
+
+d) ABOUT
+
+Developed By Shivansh Singh Bhadouria.
+B-Tech CS(Hons)
+
+
+*********************************    N  O  T  E     ******************************************** 
+To run this project you must have Latest Version of Java installed on your System(jdk 13.0.2) and 
+Oracles SQL 10G Version and a Compiler / Editor like Eclipse (Preffered). As this software creates 
+its own database and Stores it in your local System it is necessary to install a database Software. 
