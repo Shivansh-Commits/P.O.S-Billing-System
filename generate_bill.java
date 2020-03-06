@@ -56,6 +56,7 @@ public class generate_bill extends JFrame {
 	private JTextField textField_7;
 	private JTextField textField_8;
 	private JTextField textField_9;
+	private JTextField textField_4;
 
 	/**
 	 * Launch the application.
@@ -292,8 +293,11 @@ public class generate_bill extends JFrame {
 				{
 				String name=textField_5.getText();
 				int id=Integer.parseInt(textField_6.getText());
-				int mrp=Integer.parseInt(textField_7.getText());
+				double mrp=Integer.parseInt(textField_7.getText());
                 int quant=Integer.parseInt(textField_8.getText());
+                double discount = Integer.parseInt(textField_4.getText());
+                mrp= mrp - (mrp * (discount/100));
+                JOptionPane.showMessageDialog(null,mrp);
                 String size=(String)comboBox_1.getSelectedItem();
                 insertdataindb ob = new insertdataindb();
                 ob.add_to_product_in_bill(name, size, id, mrp, quant);
@@ -334,6 +338,17 @@ public class generate_bill extends JFrame {
 		});
 		btnNewButton_4.setBounds(67, 237, 154, 30);
 		panel_2.add(btnNewButton_4);
+		
+		textField_4 = new JTextField();
+		textField_4.setBounds(101, 170, 86, 19);
+		panel_2.add(textField_4);
+		textField_4.setColumns(10);
+		
+		JLabel lblNewLabel_28 = new JLabel("Discount ( % ) :");
+		lblNewLabel_28.setFont(new Font("Sitka Text", Font.PLAIN, 10));
+		lblNewLabel_28.setForeground(SystemColor.menu);
+		lblNewLabel_28.setBounds(10, 168, 87, 21);
+		panel_2.add(lblNewLabel_28);
 		
 		
 		
@@ -389,7 +404,10 @@ public class generate_bill extends JFrame {
 		lblNewLabel_25.setBounds(66, 106, 96, 13);
 		panel_3.add(lblNewLabel_25);
 		
-		
+		JLabel lblNewLabel_30 = new JLabel("");
+		lblNewLabel_30.setFont(new Font("Sitka Text", Font.PLAIN, 10));
+		lblNewLabel_30.setBounds(116, 152, 45, 13);
+		panel_3.add(lblNewLabel_30);
 		
 		JButton btnNewButton_2 = new JButton("Generate Bill");
 		btnNewButton_2.setForeground(Color.BLACK);
@@ -435,6 +453,9 @@ public class generate_bill extends JFrame {
 			    gst=returngst.returngst();
 			    lblNewLabel_16.setText(gst+"%");
 			    
+                double discount = Integer.parseInt(textField_4.getText());
+                lblNewLabel_30.setText(discount+" %");
+			    
 			    insertdataindb returngstin_no = new insertdataindb();
 			    gstin_no=returngstin_no.returngstin_no();
 			    lblNewLabel_25.setText(gstin_no);
@@ -448,6 +469,7 @@ public class generate_bill extends JFrame {
 				int mrp=Integer.parseInt(textField_7.getText());
                 int quant=Integer.parseInt(textField_8.getText());
                 String size=(String)comboBox_1.getSelectedItem();
+
 			    
 			    insertdataindb insert_in_sales_logs = new insertdataindb();
 			    insert_in_sales_logs.insert_into_sales_logs(name,size,id,mrp,quant);
@@ -537,6 +559,12 @@ public class generate_bill extends JFrame {
 		lblNewLabel_26.setBounds(10, 124, 45, 24);
 		panel_3.add(lblNewLabel_26);
 		
+		JLabel lblNewLabel_29 = new JLabel("Discount Granted:");
+		lblNewLabel_29.setFont(new Font("Sitka Text", Font.PLAIN, 10));
+		lblNewLabel_29.setForeground(SystemColor.menu);
+		lblNewLabel_29.setBounds(10, 148, 96, 24);
+		panel_3.add(lblNewLabel_29);
+		
 		
 		JPanel panel_6 = new JPanel();
 		panel_6.setBackground(new Color(0, 0, 102));
@@ -564,8 +592,4 @@ public class generate_bill extends JFrame {
 		btnNewButton_3.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 12));
 		
 	}
-	
-	
-	
-	
 }
