@@ -207,7 +207,7 @@ public class add_product_page extends JFrame {
 				}
 				catch(Exception e5)
 				{
-					JOptionPane.showMessageDialog(null,"INVALID MESSAGE");
+			    	JOptionPane.showMessageDialog(null, "ERROR : Invalid Input");
 				}
 			}
 		});
